@@ -1,5 +1,5 @@
-1. untuk membuka website dengan flask dari cmd anaconda 
-	a. set FLASK_APP=app.py
-	b. set FLASK_DEBUG=1
-	c. flask run
-	d. pyton app.py
+untuk membuka website dengan flask dari cmd anaconda 
+set FLASK_APP=app.py
+set FLASK_DEBUG=1
+flask run
+pyton app.py
