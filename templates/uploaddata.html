@@ -1,0 +1,80 @@
+{% include 'header.html' %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Content Row -->
+    <!-- Approach -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Upload Data</h6>
+        </div>
+        <div class="card-body">
+            <h2>Upload File</h2>
+            <p>Silahkan upload file yang diinginkan untuk dataset dengan menggunakan format
+                .csv dan harus 2 kolom yang pertama dengan nama "Text" dan ke dua "Labels".
+                Silahkan upload file dengan pilihan dibawah ini :</p>
+
+            <form enctype="multipart/form-data" method="POST">
+                <input type="file" name="file">
+                <div class="mt-3">
+                    <button type="submit" name="" value="upload csv" class="btn btn-primary">Submit</button>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+    <!-- Approach -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Menampilkan Data</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    {% for table in tables %}
+                        <tbody>
+                            <tr>
+                                <td>{{ table|safe }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- <div class="card-body"> {% for table in tables %} {{ table|safe }} {%
+        endfor %} </div> -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Bootstrap core JavaScript-->
+<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+<script
+    src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Core plugin JavaScript-->
+<script
+    src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{{ url_for('static', filename='js/sb-admin-2.min.js') }}"></script>
+
+<!-- Page level plugins -->
+<script
+    src="{{ url_for('static', filename='vendor/datatables/jquery.dataTables.min.js') }}"></script>
+<script
+    src="{{ url_for('static', filename='vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{{ url_for('static', filename='js/demo/datatables-demo.js') }}"></script>
+
+</body>
+
+</html>

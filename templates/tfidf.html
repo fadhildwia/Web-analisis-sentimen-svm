@@ -1,0 +1,123 @@
+{% include 'header.html' %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Jumlah Tweet</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{total}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Jumlah Tweet Positif</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{positif}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Jumlah Tweet Negatif</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{negatif}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Content Row -->
+    </div>
+    <!-- /Content Row -->
+
+    <!-- Content Row -->
+    <!-- Approach -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">TF-IDF</h6>
+        </div>
+
+        <div class="card-body">
+            <h2>Proses TF-IDF</h2>
+            <p>Silahkan klik tombol di bawah ini untuk melakukan proses TF-IDF dengan
+                menggunakan data file sebelumnya yang sudah melalui proses preprocessing.</p>
+
+            <form enctype="multipart/form-data" action="/tfidf" method="POST">
+                <div class="mt-3">
+                    <button type="submit" name="" value="tfidf" class="btn btn-primary">TF-IDF</button>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+    <!-- Approach -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Hasil TF-IDF</h6>
+        </div>
+
+        <div class="card-body">
+            <h6>Hasil TF-IDF pada data training :</h6>
+            <p>{{X_train}}</p>
+            <h6>Hasil TF-IDF pada data testing :</h6>
+            <p>{{X_test}}</p>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script
+        src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script
+        src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ url_for('static', filename='js/sb-admin-2.min.js') }}"></script>
+
+    <!-- Page level plugins -->
+    <script
+        src="{{ url_for('static', filename='vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script
+        src="{{ url_for('static', filename='vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{ url_for('static', filename='js/demo/datatables-demo.js') }}"></script>
+
+</body>
+
+</html>
