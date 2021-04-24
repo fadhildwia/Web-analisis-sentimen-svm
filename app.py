@@ -64,7 +64,9 @@ def preprocess():
 @app.route('/preprocessing', methods=['GET', 'POST'])
 def preprocessing():
     text = pandas.read_csv('uploads/dataset.csv', encoding='latin-1')
+    text.dropna(axis=0)
     text.drop(['Date','Username','Location'], axis=1, inplace=True)
+
     
     text['Text'] = text['Text'].map(lambda x: lower(x))
     text['Text'] = text['Text'].map(lambda x: remove_punctuation(x))
@@ -79,6 +81,7 @@ def preprocessing():
 @app.route('/tfidfpage', methods=['GET', 'POST'])
 def tfidfpage():
     text = pandas.read_csv('uploads/dataset_clear.csv', encoding='latin-1')
+    text.dropna(axis=0)
     positif, negatif= text['Labels'].value_counts()
     total = positif + negatif
     
@@ -96,6 +99,7 @@ def data(text):
 @app.route('/tfidf', methods=['GET', 'POST'])
 def tfidf():
     text = pandas.read_csv('uploads/dataset_clear.csv', encoding='latin-1')
+    text.dropna(axis=0)
     positif, negatif= text['Labels'].value_counts()
     total = positif + negatif
 
